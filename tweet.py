@@ -1,5 +1,10 @@
 import tweepy
+import random
 import json
+
+def list_random(ran):
+    random.shuffle(ran)
+    return ran[0]
 
 with open('config.json') as json_file:
     data = json.load(json_file)
@@ -8,6 +13,7 @@ with open('config.json') as json_file:
 
     api = tweepy.API(auth)
 
-    public_tweets = api.user_timeline(screenname="dbtmindset", count=50)
-    for tweet in public_tweets:
-        print(tweet.text)
+    with open('tweets.txt') as f:
+        lines = f.readlines()
+        message = list_random(lines)
+        api.update_status(message)
