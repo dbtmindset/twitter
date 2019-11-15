@@ -9,3 +9,4 @@ A bot that parses [Marsha Linehan's DBT Skills Training Handouts](https://projec
 * [NLTK](https://www.nltk.org/)
 * [language-check](https://pypi.org/project/language-check/)
 * [textgenrnn](https://github.com/minimaxir/textgenrnn)
+* [tensorflow](https://www.tensorflow.org/)
