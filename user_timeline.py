@@ -10,4 +10,6 @@ with open('config.json') as json_file:
 
     public_tweets = api.user_timeline(screenname="dbtmindset", count=50)
     for tweet in public_tweets:
-        print(tweet.text)
+        if not tweet.text.startswith('@'):
+            text = tweet.text.replace('#DBT', '')
+            print(text)
